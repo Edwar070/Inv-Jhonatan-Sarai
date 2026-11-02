@@ -1,0 +1,888 @@
+/* ============================================
+   RESPONSIVE.CSS — Enfoque MOBILE-FIRST
+   Invitación de Boda — Jonathan & Sarai
+   Prioridad: 📱 Celular → Tablet → Desktop
+   ============================================ */
+
+/* ============================================
+   BASE: CELULAR (Mobile-First)
+   ============================================ */
+
+/* --- Contenedor base --- */
+.container {
+  max-width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* --- HERO --- */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 70px 20px 60px;
+}
+
+.hero-inner {
+  gap: 0.85rem;
+  max-width: 100%;
+}
+
+.monogram svg {
+  width: 120px;
+  height: 120px;
+}
+
+.pretitle {
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+}
+
+.couple {
+  font-size: clamp(2.4rem, 11vw, 3.4rem);
+  line-height: 1.1;
+}
+
+.couple .ampersand {
+  font-size: clamp(1.8rem, 8vw, 2.6rem);
+}
+
+.hero-date {
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+}
+
+.divider {
+  max-width: 220px;
+  margin: 0.75rem 0;
+}
+
+.verse {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  padding: 0 8px;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.verse cite {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+/* Botón principal — más pequeño y compacto */
+.btn-gold {
+  font-size: 0.68rem;
+  padding: 0.65rem 1.4rem;
+  min-height: 38px;
+  width: auto;
+  max-width: 260px;
+  letter-spacing: 1.3px;
+}
+
+/* Ramas de esquina más pequeñas en móvil */
+.leaf-corner {
+  width: 100px;
+  height: 100px;
+  opacity: 0.45;
+}
+
+/* Ocultar el indicador de scroll en móvil (no es necesario) */
+.scroll-indicator {
+  display: none;
+}
+
+/* --- COUNTDOWN --- */
+.countdown {
+  padding: 4rem 20px;
+}
+
+.counter {
+  gap: 0.4rem;
+  margin: 2rem 0 1rem;
+}
+
+.c-number {
+  font-size: clamp(1.4rem, 7vw, 2rem);
+}
+
+.c-box {
+  padding: 0.6rem 0.2rem;
+  border-radius: 10px;
+}
+
+.c-item small {
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+  margin-top: 0.4rem;
+}
+
+.date-line {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+/* --- STORY --- */
+.story {
+  padding: 4rem 20px;
+}
+
+.story::before,
+.story::after {
+  width: 40px;
+  height: 40px;
+}
+
+.story::before {
+  top: 16px;
+  left: 16px;
+}
+.story::after {
+  bottom: 16px;
+  right: 16px;
+}
+
+.story-text {
+  font-size: 1rem;
+  line-height: 1.9;
+  padding: 0 4px;
+}
+
+.leaf-branch {
+  max-width: 260px;
+}
+
+/* --- EVENTS --- */
+.events {
+  padding: 4rem 20px;
+}
+
+.event-grid {
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.event-card {
+  padding: 2rem 1.5rem;
+}
+
+.event-card h3 {
+  font-size: 1.8rem;
+}
+
+.event-time {
+  font-size: 1.4rem;
+}
+
+.event-place {
+  font-size: 0.95rem;
+}
+
+/* Botón de ubicación — más pequeño */
+.btn-outline {
+  font-size: 0.62rem;
+  padding: 0.5rem 1.2rem;
+  min-height: 34px;
+  width: 85%;
+  max-width: 220px;
+  letter-spacing: 1.2px;
+}
+
+/* --- DRESSCODE / GIFTS / RSVP --- */
+.dresscode,
+.gifts,
+.rsvp {
+  padding: 4rem 20px;
+}
+
+.dresscode-icon,
+.gift-icon,
+.wa-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.dresscode-icon::after,
+.gift-icon::after,
+.wa-icon::after {
+  inset: -6px;
+}
+
+.dresscode-text,
+.gifts-text,
+.rsvp-text {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.palette {
+  padding: 1.25rem 1rem;
+  max-width: 300px;
+}
+
+.swatch {
+  width: 38px;
+  height: 38px;
+}
+
+/* --- BOTÓN WHATSAPP --- */
+.btn-wa {
+  font-size: 0.68rem;
+  padding: 0.65rem 1.4rem;
+  min-height: 40px;
+  letter-spacing: 1.2px;
+  width: auto;
+  max-width: 280px;
+}
+
+/* --- NOTA DE CONFIRMACIÓN --- */
+.nota-confirmar {
+  width: 88%;
+  max-width: 290px;
+  padding: 11px 14px;
+  font-size: 0.72rem;
+  margin: 15px auto 0;
+}
+
+.nota-confirmar .firma {
+  font-size: 0.68rem;
+}
+
+/* --- MUSIC PLAYER (compacto a la derecha) --- */
+.music-player {
+  bottom: 14px;
+  right: 14px;
+  left: auto;
+  padding: 4px 5px 4px 4px;
+  gap: 6px;
+  border-radius: 50px;
+}
+
+.mp-cover-wrapper {
+  width: 38px;
+  height: 38px;
+}
+
+.mp-title {
+  max-width: 85px;
+  font-size: 0.72rem;
+}
+
+.mp-artist {
+  max-width: 85px;
+  font-size: 0.6rem;
+}
+
+.mp-btn {
+  width: 36px;
+  height: 36px;
+}
+
+.mp-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.mp-info {
+  gap: 0;
+}
+
+/* --- FOOTER --- */
+.footer {
+  padding: 3.5rem 20px 2rem;
+}
+
+.footer-monogram svg {
+  width: 80px;
+  height: 80px;
+}
+
+.f-couple {
+  font-size: clamp(1.8rem, 7vw, 2.4rem);
+}
+
+.f-date {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+}
+
+.f-hashtag {
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+}
+
+.f-love {
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   MÓVILES MUY PEQUEÑOS (≤ 380px)
+   ============================================ */
+@media (max-width: 380px) {
+  .hero {
+    padding: 60px 14px 50px;
+  }
+
+  .monogram svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pretitle {
+    font-size: 0.58rem;
+    letter-spacing: 3px;
+  }
+
+  .couple {
+    font-size: 2.1rem;
+  }
+
+  .couple .ampersand {
+    font-size: 1.6rem;
+  }
+
+  .hero-date {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+  }
+
+  .verse {
+    font-size: 0.88rem;
+    padding: 0 4px;
+  }
+
+  .verse cite {
+    font-size: 0.72rem;
+  }
+
+  .btn-gold {
+    font-size: 0.64rem;
+    padding: 0.6rem 1.2rem;
+    min-height: 36px;
+    max-width: 230px;
+    letter-spacing: 1.2px;
+  }
+
+  .leaf-corner {
+    width: 80px;
+    height: 80px;
+    opacity: 0.35;
+  }
+
+  .c-number {
+    font-size: 1.25rem;
+  }
+
+  .c-box {
+    padding: 0.5rem 0.15rem;
+  }
+
+  .c-item small {
+    font-size: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .event-card {
+    padding: 1.75rem 1.2rem;
+  }
+
+  .event-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .btn-outline {
+    font-size: 0.58rem;
+    padding: 0.45rem 1rem;
+    min-height: 32px;
+    max-width: 200px;
+  }
+
+  .btn-wa {
+    font-size: 0.64rem;
+    padding: 0.6rem 1.2rem;
+    min-height: 38px;
+    letter-spacing: 1.1px;
+  }
+
+  .palette {
+    max-width: 260px;
+  }
+
+  .swatch {
+    width: 34px;
+    height: 34px;
+  }
+
+  .music-player {
+    bottom: 12px;
+    right: 12px;
+    left: auto;
+    padding: 3px 4px 3px 3px;
+    gap: 5px;
+  }
+
+  .mp-cover-wrapper {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mp-title {
+    max-width: 75px;
+    font-size: 0.68rem;
+  }
+  .mp-artist {
+    max-width: 75px;
+    font-size: 0.55rem;
+  }
+  .mp-btn {
+    width: 30px;
+    height: 30px;
+  }
+  .mp-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .nota-confirmar {
+    width: 90%;
+    max-width: 270px;
+    padding: 10px 12px;
+    font-size: 0.68rem;
+  }
+
+  .nota-confirmar .firma {
+    font-size: 0.64rem;
+  }
+
+  .footer-monogram svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* ============================================
+   MÓVIL EN HORIZONTAL (landscape)
+   ============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 40px 20px 30px;
+    min-height: 100vh;
+  }
+
+  .monogram svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  .couple {
+    font-size: 2.2rem;
+  }
+
+  .verse {
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+  }
+
+  .btn-gold {
+    min-height: 36px;
+    padding: 0.55rem 1.2rem;
+  }
+
+  .leaf-corner {
+    width: 70px;
+    height: 70px;
+    opacity: 0.3;
+  }
+}
+
+/* ============================================
+   DISPOSITIVOS TÁCTILES (sin hover real)
+   ACTUALIZADO: no agrandar botones, solo desactivar hover
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Desactivar hover transform en táctil (no agrandar botones) */
+  .btn-gold:hover,
+  .btn-outline:hover,
+  .btn-wa:hover {
+    transform: none;
+  }
+
+  /* Feedback táctil al presionar */
+  .btn-gold:active,
+  .btn-outline:active,
+  .btn-wa:active {
+    transform: scale(0.96);
+    opacity: 0.9;
+  }
+
+  /* Cards de eventos sin hover en táctil */
+  .event-card:hover {
+    transform: none;
+    box-shadow:
+      0 10px 40px rgba(90, 107, 78, 0.08),
+      0 2px 8px rgba(90, 107, 78, 0.04);
+  }
+
+  .swatch:hover {
+    transform: none;
+  }
+}
+
+/* ============================================
+   TABLET (≥ 576px)
+   ============================================ */
+@media (min-width: 576px) {
+  .container {
+    max-width: 560px;
+    padding: 0 28px;
+  }
+
+  .hero {
+    padding: 80px 28px 70px;
+  }
+
+  .monogram svg {
+    width: 140px;
+    height: 140px;
+  }
+
+  .couple {
+    font-size: clamp(3rem, 8vw, 4rem);
+  }
+
+  .couple .ampersand {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+  }
+
+  /* Botones vuelven a tamaño normal en tablet */
+  .btn-gold {
+    width: auto;
+    max-width: none;
+    padding: 0.8rem 2rem;
+    font-size: 0.72rem;
+    min-height: 42px;
+  }
+
+  .btn-outline {
+    width: auto;
+    max-width: none;
+    padding: 0.6rem 1.6rem;
+    font-size: 0.68rem;
+    min-height: 38px;
+  }
+
+  .btn-wa {
+    width: auto;
+    max-width: none;
+    padding: 0.8rem 2rem;
+    font-size: 0.72rem;
+    min-height: 44px;
+  }
+
+  .counter {
+    gap: 0.7rem;
+  }
+
+  .c-number {
+    font-size: 2.2rem;
+  }
+
+  .c-box {
+    padding: 0.8rem 0.4rem;
+  }
+
+  .c-item small {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+
+  .leaf-corner {
+    width: 130px;
+    height: 130px;
+    opacity: 0.5;
+  }
+
+  .story-text {
+    font-size: 1.1rem;
+  }
+
+  .event-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .music-player {
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+    padding: 6px 8px 6px 6px;
+  }
+
+  .mp-cover-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .mp-title {
+    max-width: 120px;
+    font-size: 0.78rem;
+  }
+  .mp-artist {
+    max-width: 120px;
+    font-size: 0.65rem;
+  }
+  .mp-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .mp-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  /* Nota en tablet */
+  .nota-confirmar {
+    width: 70%;
+    max-width: 340px;
+    font-size: 0.78rem;
+    padding: 14px 18px;
+  }
+}
+
+/* ============================================
+   TABLET GRANDE / LAPTOP PEQUEÑA (≥ 768px)
+   ============================================ */
+@media (min-width: 768px) {
+  .container {
+    max-width: 860px;
+    padding: 0 32px;
+  }
+
+  .hero {
+    padding: 90px 32px 80px;
+  }
+
+  .hero-inner {
+    max-width: 640px;
+    gap: 1rem;
+  }
+
+  .monogram svg {
+    width: 160px;
+    height: 160px;
+  }
+
+  .pretitle {
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+  }
+
+  .hero-date {
+    font-size: 1rem;
+    letter-spacing: 6px;
+  }
+
+  /* Botones en desktop */
+  .btn-gold {
+    padding: 0.9rem 2.2rem;
+    font-size: 0.75rem;
+    min-height: 46px;
+  }
+
+  .btn-outline {
+    padding: 0.65rem 1.8rem;
+    font-size: 0.7rem;
+    min-height: 40px;
+  }
+
+  .btn-wa {
+    padding: 0.9rem 2.2rem;
+    font-size: 0.75rem;
+    min-height: 48px;
+  }
+
+  /* Eventos: 2 columnas */
+  .event-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 780px;
+    gap: 2rem;
+  }
+
+  .event-card {
+    padding: 2.75rem 2rem;
+  }
+
+  /* Countdown más grande */
+  .counter {
+    gap: 1rem;
+  }
+
+  .c-number {
+    font-size: 2.6rem;
+  }
+
+  .c-box {
+    padding: 0.9rem 0.6rem;
+  }
+
+  .c-item small {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+  }
+
+  /* Story más amplio */
+  .story-text {
+    font-size: 1.15rem;
+    max-width: 560px;
+  }
+
+  .leaf-branch {
+    max-width: 340px;
+  }
+
+  /* Footer más amplio */
+  .footer-inner {
+    max-width: 560px;
+  }
+
+  .footer-monogram svg {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* ============================================
+   DESKTOP (≥ 1024px)
+   ============================================ */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .hero-inner {
+    max-width: 720px;
+  }
+
+  .couple {
+    font-size: 4.8rem;
+  }
+
+  .couple .ampersand {
+    font-size: 3.6rem;
+  }
+
+  .leaf-corner {
+    width: 160px;
+    height: 160px;
+    opacity: 0.55;
+  }
+
+  /* Mostrar indicador de scroll en desktop */
+  .scroll-indicator {
+    display: block;
+  }
+
+  .event-grid {
+    max-width: 900px;
+    gap: 2.5rem;
+  }
+
+  .story-text {
+    font-size: 1.2rem;
+    max-width: 620px;
+  }
+}
+
+/* ============================================
+   DESKTOP GRANDE (≥ 1280px)
+   ============================================ */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1040px;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+  }
+}
+
+/* ============================================
+   SOPORTE PARA NOTCH (iPhone X+)
+   ============================================ */
+@supports (padding: max(0px)) {
+  .music-player {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+
+  @media (min-width: 576px) {
+    .music-player {
+      right: max(24px, env(safe-area-inset-right));
+      bottom: max(24px, env(safe-area-inset-bottom));
+    }
+  }
+
+  .hero {
+    padding-top: max(70px, env(safe-area-inset-top));
+    padding-bottom: max(60px, env(safe-area-inset-bottom));
+  }
+}
+
+/* ============================================
+   ORIENTACIÓN LANDSCAPE EN TABLET/DESKTOP
+   ============================================ */
+@media (min-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+    padding: 60px 40px 50px;
+  }
+
+  .hero-inner {
+    gap: 0.75rem;
+  }
+
+  .monogram svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .couple {
+    font-size: clamp(3rem, 5vw, 4rem);
+  }
+}
+
+/* ============================================
+   IMPRESIÓN
+   ============================================ */
+@media print {
+  .music-player,
+  .particles,
+  .scroll-indicator,
+  .leaf-corner,
+  .btn-gold,
+  .btn-outline,
+  .btn-wa {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .hero,
+  .countdown,
+  .story,
+  .events,
+  .dresscode,
+  .gifts,
+  .rsvp,
+  .footer {
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+    page-break-inside: avoid;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,450 @@
+/* ============================================
+   ANIMATIONS.CSS — Animaciones específicas
+   Invitación de Boda — Jonatan & Sarai
+   Paleta: Verde Salvia, Beige y Dorado Suave
+   ============================================ */
+
+/* ===== ENTRADA ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== REPETICIÓN ===== */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(201, 169, 97, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(201, 169, 97, 0.5);
+  }
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 3deg;
+  }
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatMonogram {
+  0%,
+  100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 8px 24px rgba(90, 107, 78, 0.18));
+  }
+  50% {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 12px 32px rgba(201, 169, 97, 0.35));
+  }
+}
+
+@keyframes goldPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(201, 169, 97, 0.4),
+      0 4px 12px rgba(90, 107, 78, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(201, 169, 97, 0),
+      0 8px 24px rgba(90, 107, 78, 0.25);
+  }
+}
+
+@keyframes pulseHeart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+/* ===== REPRODUCTOR ===== */
+@keyframes spinCover {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideUpPlayer {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== PARTÍCULAS ===== */
+@keyframes floatParticle {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(0deg) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10vh) rotate(720deg) scale(1.2);
+  }
+}
+
+/* ===== SCROLL ===== */
+@keyframes scrollDown {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* ===== NÚMEROS DEL COUNTDOWN ===== */
+@keyframes flipNumber {
+  0% {
+    transform: rotateX(0deg) scale(1);
+    opacity: 1;
+  }
+  45% {
+    transform: rotateX(-90deg) scale(1.1);
+    opacity: 0.4;
+  }
+  55% {
+    transform: rotateX(-90deg) scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: rotateX(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== CLASES ===== */
+.anim-fade-in {
+  animation: fadeIn 0.8s ease both;
+}
+.anim-fade-in-up {
+  animation: fadeInUp 0.8s ease both;
+}
+.anim-fade-in-down {
+  animation: fadeInDown 0.8s ease both;
+}
+.anim-slide-left {
+  animation: slideInLeft 0.8s ease both;
+}
+.anim-slide-right {
+  animation: slideInRight 0.8s ease both;
+}
+.anim-scale-in {
+  animation: scaleIn 0.6s ease both;
+}
+.anim-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+.anim-float {
+  animation: float 3s ease-in-out infinite;
+}
+.anim-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+.anim-heart {
+  animation: pulseHeart 2s ease-in-out infinite;
+}
+.anim-rotate-slow {
+  animation: rotateSlow 20s linear infinite;
+}
+.anim-sway {
+  animation: sway 6s ease-in-out infinite;
+}
+
+/* ===== DELAYS ===== */
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+}
+.delay-4 {
+  animation-delay: 0.4s;
+}
+.delay-5 {
+  animation-delay: 0.5s;
+}
+.delay-6 {
+  animation-delay: 0.6s;
+}
+.delay-8 {
+  animation-delay: 0.8s;
+}
+.delay-10 {
+  animation-delay: 1s;
+}
+.delay-12 {
+  animation-delay: 1.2s;
+}
+.delay-15 {
+  animation-delay: 1.5s;
+}
+
+/* ===== ESPECÍFICAS DE LA INVITACIÓN ===== */
+.monogram {
+  animation: floatMonogram 5s ease-in-out infinite;
+}
+
+.leaf-corner {
+  animation: sway 8s ease-in-out infinite;
+  transform-origin: center;
+  translate: 0 var(--parallax-y, 0);
+  will-change: translate;
+}
+
+.leaf-corner--tl {
+  animation-delay: 0s;
+}
+.leaf-corner--tr {
+  animation-delay: 1s;
+}
+.leaf-corner--bl {
+  animation-delay: 2s;
+}
+.leaf-corner--br {
+  animation-delay: 3s;
+}
+
+.leaf-branch {
+  animation: fadeInUp 1.2s ease 0.3s both;
+}
+
+.event-icon::before,
+.wa-icon::after,
+.dresscode-icon::after,
+.gift-icon::after {
+  animation: rotateSlow 20s linear infinite;
+}
+
+.event-icon,
+.wa-icon,
+.dresscode-icon,
+.gift-icon {
+  animation: goldPulse 4s ease-in-out infinite;
+}
+
+.f-love {
+  animation: pulseHeart 2s ease-in-out infinite;
+}
+
+.swatch {
+  animation: fadeIn 0.8s ease both;
+}
+.swatch:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.swatch:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.swatch:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.footer-monogram {
+  animation: float 6s ease-in-out infinite;
+}
+
+.btn-gold,
+.btn-wa {
+  background-size: 200% 100%;
+}
+
+.btn-gold:hover,
+.btn-wa:hover {
+  background-image: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(201, 169, 97, 0.35) 40%,
+    rgba(201, 169, 97, 0.15) 60%,
+    transparent 80%
+  );
+  background-repeat: no-repeat;
+  background-position: 200% 0;
+  animation: goldShimmer 1.5s ease forwards;
+}
+
+/* ===== REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .monogram,
+  .footer-monogram,
+  .leaf-corner,
+  .f-love,
+  .event-icon,
+  .wa-icon,
+  .dresscode-icon,
+  .gift-icon,
+  .swatch {
+    animation: none;
+  }
+
+  .event-icon::before,
+  .wa-icon::after,
+  .dresscode-icon::after,
+  .gift-icon::after {
+    animation: none;
+  }
+}
