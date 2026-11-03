@@ -1,6 +1,6 @@
 /* ============================================
    COUNTDOWN.JS — Cuenta regresiva
-   Invitación de Boda — Jonathan & Sarai
+   Invitación de Boda — Jhonatan & Sarai
    ============================================ */
 
 (function () {

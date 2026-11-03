@@ -3875,9 +3875,18 @@ button {
      Auto-pausar al salir de la pestaña
      (ahorra batería y evita música de fondo)
      ============================================ */
+  let wasPlayingBeforeHide = false;
+
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden && isPlaying) {
-      audio.pause();
+    if (document.hidden) {
+      wasPlayingBeforeHide = isPlaying;
+      if (isPlaying) audio.pause();
+    } else if (wasPlayingBeforeHide) {
+      audio
+        .play()
+        .then(() => setPlayingState(true))
+        .catch(() => {});
+      wasPlayingBeforeHide = false;
     }
   });
 
@@ -4185,8 +4194,8 @@ button {
           </div>
         </div>
         <div class="mp-info">
-          <div class="mp-title" id="mpTitle">Our song</div>
-          <div class="mp-artist" id="mpArtist">Melodia</div>
+          <div class="mp-title" id="mpTitle">Somos</div>
+          <div class="mp-artist" id="mpArtist">Majo y Dan</div>
         </div>
         <div class="mp-controls">
           <button
@@ -4232,7 +4241,6 @@ button {
       </div>
       <audio id="audio" loop preload="metadata">
         <source src="audio/musica.mp3" type="audio/mpeg" />
-        <source src="audio/musica.ogg" type="audio/ogg" />
         Tu navegador no soporta audio.
       </audio>
     </div>
@@ -4661,9 +4669,10 @@ button {
         <p class="hero-date reveal">22 · 12 · 2026</p>
 
         <blockquote class="verse reveal" aria-label="Versículo bíblico">
-          "Has cautivado mi corazón, hermana mía, esposa mía; has cautivado mi
-          corazón con una sola mirada de tus ojos."
-          <cite>— Cantares 4:9</cite>
+          "No me ruegues que te deje, y que me aparte de ti; porque adondequiera
+          que tú fueres, iré yo, y dondequiera que vivieres, viviré. Tu pueblo
+          será mi pueblo, y tu Dios mi Dios."
+          <cite>— Ruth 1:16</cite>
         </blockquote>
 
         <a href="#countdown" class="btn-gold reveal" data-scroll>
@@ -5193,55 +5202,6 @@ button {
             <span class="swatch swatch--sage" title="Verde Salvia"></span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============================================
-       GIFTS
-       ============================================ -->
-    <section class="gifts" id="gifts" aria-labelledby="gifts-title">
-      <div class="container center reveal">
-        <p class="section-eyebrow">Un detalle con nosotros</p>
-        <h2 class="section-title" id="gifts-title">Mesa de Regalos</h2>
-        <div class="divider divider--ornate center" aria-hidden="true">
-          <span class="divider-line"></span>
-          <span class="divider-star">
-            <svg viewBox="0 0 24 24" width="14" height="14">
-              <path
-                d="M12 2 L14 9 L21 11 L14 13 L12 20 L10 13 L3 11 L10 9 Z"
-                fill="currentColor"
-              />
-            </svg>
-          </span>
-          <span class="divider-line"></span>
-        </div>
-
-        <div class="gift-icon" aria-hidden="true">
-          <svg viewBox="0 0 64 64" width="56" height="56">
-            <g
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="10" y="26" width="44" height="30" rx="1.5" />
-              <path d="M10 36 L54 36" />
-              <path d="M32 26 L32 56" />
-              <path d="M32 26 C 22 26, 18 16, 24 12 C 30 8, 32 20, 32 26 Z" />
-              <path d="M32 26 C 42 26, 46 16, 40 12 C 34 8, 32 20, 32 26 Z" />
-            </g>
-          </svg>
-        </div>
-
-        <p class="gifts-text">
-          Tu presencia es el mejor regalo, pero si deseas obsequiarnos algo,
-          puedes hacerlo a través de:
-        </p>
-
-        <a class="btn-outline" href="#" target="_blank" rel="noopener"
-          >Ver opciones de regalo</a
-        >
       </div>
     </section>
 

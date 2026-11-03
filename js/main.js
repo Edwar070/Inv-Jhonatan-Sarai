@@ -1,6 +1,6 @@
 /* ============================================
    MAIN.JS — Funciones generales
-   Invitación de Boda — Jonathan & Sarai
+   Invitación de Boda — Jhonatan & Sarai
    ============================================ */
 
 (function () {
@@ -52,7 +52,6 @@
     const isMobile = window.innerWidth < 768;
     const count = isMobile ? 6 : 12;
 
-    // SVG de hoja (reutilizable)
     const leafSVG = `
       <svg viewBox="0 0 24 24" width="100%" height="100%" fill="currentColor">
         <path d="M12 2 C 8 8, 6 14, 10 20 C 12 18, 14 14, 12 2 Z" />
@@ -93,7 +92,7 @@
     const PHONE = "59178331146";
 
     const message = encodeURIComponent(
-      "¡Hola Jonatan y Sarai! 💚\n\n" +
+      "¡Hola Jhonatan y Sarai! 💚\n\n" +
         "Confirmo mi asistencia a su boda del 22 de diciembre de 2026.\n\n" +
         "Nombre: \n" +
         "Número de invitados: \n" +
@@ -147,7 +146,7 @@
     preventDoubleTapZoom();
 
     console.log(
-      "%c💚 Jonatan & Sarai · 22.12.2026",
+      "%c💚 Jhonatan & Sarai · 22.12.2026",
       "color: #5A6B4E; font-size: 14px; font-weight: bold;",
     );
   }

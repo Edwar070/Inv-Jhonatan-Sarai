@@ -1,6 +1,6 @@
 /* ============================================
    RESPONSIVE.CSS — Enfoque MOBILE-FIRST
-   Invitación de Boda — Jonathan & Sarai
+   Invitación de Boda — Jhonatan & Sarai
    Prioridad: 📱 Celular → Tablet → Desktop
    ============================================ */
 
@@ -27,9 +27,11 @@
   max-width: 100%;
 }
 
+/* Monograma más grande en móvil */
 .monogram svg {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: auto;
+  aspect-ratio: 220 / 200;
 }
 
 .pretitle {
@@ -321,9 +323,11 @@
     padding: 60px 14px 50px;
   }
 
+  /* Monograma sigue grande incluso en pantallas pequeñas */
   .monogram svg {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: auto;
+    aspect-ratio: 220 / 200;
   }
 
   .pretitle {
@@ -468,8 +472,9 @@
   }
 
   .monogram svg {
-    width: 90px;
-    height: 90px;
+    width: 130px;
+    height: auto;
+    aspect-ratio: 220 / 200;
   }
 
   .couple {
@@ -495,7 +500,6 @@
 
 /* ============================================
    DISPOSITIVOS TÁCTILES (sin hover real)
-   ACTUALIZADO: no agrandar botones, solo desactivar hover
    ============================================ */
 @media (hover: none) and (pointer: coarse) {
   /* Desactivar hover transform en táctil (no agrandar botones) */
@@ -539,9 +543,11 @@
     padding: 80px 28px 70px;
   }
 
+  /* Monograma más grande */
   .monogram svg {
-    width: 140px;
-    height: 140px;
+    width: 220px;
+    height: auto;
+    aspect-ratio: 220 / 200;
   }
 
   .couple {
@@ -552,7 +558,6 @@
     font-size: clamp(2.2rem, 6vw, 3rem);
   }
 
-  /* Botones vuelven a tamaño normal en tablet */
   .btn-gold {
     width: auto;
     max-width: none;
@@ -637,7 +642,6 @@
     height: 17px;
   }
 
-  /* Nota en tablet */
   .nota-confirmar {
     width: 70%;
     max-width: 340px;
@@ -664,9 +668,11 @@
     gap: 1rem;
   }
 
+  /* Monograma destacado */
   .monogram svg {
-    width: 160px;
-    height: 160px;
+    width: 280px;
+    height: auto;
+    aspect-ratio: 220 / 200;
   }
 
   .pretitle {
@@ -679,7 +685,6 @@
     letter-spacing: 6px;
   }
 
-  /* Botones en desktop */
   .btn-gold {
     padding: 0.9rem 2.2rem;
     font-size: 0.75rem;
@@ -698,7 +703,6 @@
     min-height: 48px;
   }
 
-  /* Eventos: 2 columnas */
   .event-grid {
     grid-template-columns: 1fr 1fr;
     max-width: 780px;
@@ -709,7 +713,6 @@
     padding: 2.75rem 2rem;
   }
 
-  /* Countdown más grande */
   .counter {
     gap: 1rem;
   }
@@ -727,7 +730,6 @@
     letter-spacing: 3px;
   }
 
-  /* Story más amplio */
   .story-text {
     font-size: 1.15rem;
     max-width: 560px;
@@ -737,7 +739,6 @@
     max-width: 340px;
   }
 
-  /* Footer más amplio */
   .footer-inner {
     max-width: 560px;
   }
@@ -760,6 +761,13 @@
     max-width: 720px;
   }
 
+  /* Monograma más grande en desktop */
+  .monogram svg {
+    width: 320px;
+    height: auto;
+    aspect-ratio: 220 / 200;
+  }
+
   .couple {
     font-size: 4.8rem;
   }
@@ -774,7 +782,6 @@
     opacity: 0.55;
   }
 
-  /* Mostrar indicador de scroll en desktop */
   .scroll-indicator {
     display: block;
   }
@@ -800,6 +807,13 @@
 
   .hero-inner {
     max-width: 800px;
+  }
+
+  /* Monograma aún más grande en pantallas grandes */
+  .monogram svg {
+    width: 360px;
+    height: auto;
+    aspect-ratio: 220 / 200;
   }
 }
 
@@ -839,8 +853,9 @@
   }
 
   .monogram svg {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: auto;
+    aspect-ratio: 220 / 200;
   }
 
   .couple {

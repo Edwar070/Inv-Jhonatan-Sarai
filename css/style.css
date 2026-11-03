@@ -1,7 +1,7 @@
 /* ============================================
    STYLE.CSS — Estilos principales
-   Invitación de Boda — Jonathan & Sarai
-   Versión premium con decoraciones doradas
+   Invitación de Boda — Jhonatan & Sarai
+   Versión premium con más presencia de verde
    ============================================ */
 
 :root {
@@ -64,7 +64,7 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   background-image:
-    radial-gradient(rgba(var(--sage-rgb), 0.06) 1px, transparent 1px),
+    radial-gradient(rgba(var(--sage-rgb), 0.1) 1px, transparent 1px),
     radial-gradient(rgba(var(--gold-rgb), 0.05) 1px, transparent 1px);
   background-size:
     24px 24px,
@@ -442,15 +442,15 @@ button {
   background:
     radial-gradient(
       ellipse at top,
-      rgba(var(--gold-rgb), 0.12) 0%,
+      rgba(var(--gold-rgb), 0.14) 0%,
       transparent 60%
     ),
     radial-gradient(
       ellipse at bottom,
-      rgba(var(--sage-rgb), 0.15) 0%,
-      transparent 60%
+      rgba(var(--sage-rgb), 0.28) 0%,
+      transparent 65%
     ),
-    linear-gradient(180deg, var(--beige-light) 0%, var(--beige) 100%);
+    linear-gradient(180deg, var(--beige-light) 0%, #e4ead9 100%);
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -585,8 +585,9 @@ button {
 }
 
 .monogram svg {
-  width: 220px;
-  height: 200px;
+  width: 240px;
+  height: auto;
+  aspect-ratio: 220 / 200;
   filter: drop-shadow(0 8px 24px rgba(var(--gold-rgb), 0.25));
 }
 
@@ -766,7 +767,7 @@ button {
 }
 
 /* ============================================
-   BOTONES (ACTUALIZADO - MÁS PEQUEÑOS)
+   BOTONES
    ============================================ */
 .btn-gold,
 .btn-outline,
@@ -1079,10 +1080,10 @@ button {
   background:
     radial-gradient(
       ellipse at center,
-      rgba(var(--gold-rgb), 0.08) 0%,
+      rgba(var(--gold-rgb), 0.1) 0%,
       transparent 70%
     ),
-    var(--white);
+    linear-gradient(180deg, #eef2e8 0%, var(--beige-light) 100%);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1143,7 +1144,7 @@ button {
   background: linear-gradient(
     180deg,
     var(--beige-light) 0%,
-    var(--beige-dark) 100%
+    var(--sage-light) 100%
   );
   position: relative;
   overflow: hidden;
@@ -1186,7 +1187,8 @@ button {
   box-shadow:
     0 10px 40px rgba(var(--sage-dark-rgb), 0.08),
     0 2px 8px rgba(var(--gold-rgb), 0.08);
-  border: 1px solid rgba(var(--sage-rgb), 0.3);
+  border: 1px solid rgba(var(--sage-rgb), 0.45);
+  border-top: 3px solid var(--sage-dark);
   transition:
     transform var(--transition),
     box-shadow var(--transition),
@@ -1337,7 +1339,7 @@ button {
 
 .btn-outline {
   padding: 0.55rem 1.4rem;
-  background: transparent;
+  background: rgba(var(--sage-rgb), 0.08);
   border: 1.5px solid var(--sage-dark);
   color: var(--sage-dark);
   font-size: 0.65rem;
@@ -1377,10 +1379,10 @@ button {
   background:
     radial-gradient(
       ellipse at bottom,
-      rgba(var(--gold-rgb), 0.1) 0%,
+      rgba(var(--gold-rgb), 0.12) 0%,
       transparent 70%
     ),
-    var(--white);
+    linear-gradient(180deg, #f2f5ec 0%, var(--beige-light) 100%);
   text-align: center;
   position: relative;
 }
@@ -1493,7 +1495,7 @@ button {
    ============================================ */
 .gifts {
   padding: 5rem 20px;
-  background: linear-gradient(180deg, var(--beige) 0%, var(--beige-dark) 100%);
+  background: linear-gradient(180deg, var(--beige) 0%, var(--sage-light) 100%);
   text-align: center;
   position: relative;
 }
@@ -1513,7 +1515,7 @@ button {
   background:
     radial-gradient(
       ellipse at top,
-      rgba(var(--sage-rgb), 0.12) 0%,
+      rgba(var(--sage-rgb), 0.22) 0%,
       transparent 70%
     ),
     var(--white);
@@ -1605,7 +1607,7 @@ button {
 }
 
 /* ============================================
-   NOTA DE CONFIRMACIÓN (debajo de RSVP)
+   NOTA DE CONFIRMACIÓN
    ============================================ */
 .nota-confirmar {
   background-color: rgba(201, 169, 97, 0.08);
@@ -1644,10 +1646,10 @@ button {
   background:
     radial-gradient(
       ellipse at top,
-      rgba(var(--gold-rgb), 0.15) 0%,
+      rgba(var(--gold-rgb), 0.18) 0%,
       transparent 70%
     ),
-    linear-gradient(180deg, var(--sage-darker) 0%, #1f2820 100%);
+    linear-gradient(180deg, var(--sage-darker) 0%, #172015 100%);
   color: rgba(253, 251, 247, 0.65);
   text-align: center;
   position: relative;
@@ -1816,6 +1818,9 @@ button {
     width: 220px;
     height: 220px;
   }
+  .monogram svg {
+    width: 280px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1828,13 +1833,15 @@ button {
   .story-text {
     font-size: 1.2rem;
   }
+  .monogram svg {
+    width: 300px;
+  }
 }
 
 /* ============================================
    RESPONSIVE — CELULAR (AJUSTES FINOS)
    ============================================ */
 @media (max-width: 600px) {
-  /* Botones más pequeños */
   .btn-gold {
     padding: 0.65rem 1.4rem;
     font-size: 0.68rem;
@@ -1856,7 +1863,6 @@ button {
     letter-spacing: 1.2px;
   }
 
-  /* Botón de ubicación ocupa el 85% centrado */
   .event-card .btn-outline {
     display: inline-flex;
     width: 85%;
@@ -1864,7 +1870,6 @@ button {
     margin: 0.5rem auto 0;
   }
 
-  /* Reproductor más compacto */
   .music-player {
     bottom: 14px;
     right: 14px;
@@ -1901,7 +1906,6 @@ button {
     gap: 0;
   }
 
-  /* Nota de confirmación más compacta */
   .nota-confirmar {
     width: 88%;
     max-width: 290px;
@@ -1914,7 +1918,6 @@ button {
     font-size: 0.68rem;
   }
 
-  /* Contador más compacto */
   .counter {
     gap: 0.4rem;
   }
@@ -1927,17 +1930,14 @@ button {
     font-size: clamp(1.5rem, 7vw, 2.4rem);
   }
 
-  /* Cards de eventos más compactas */
   .event-card {
     padding: 2rem 1.2rem;
   }
 
-  /* Títulos más pequeños */
   .section-title {
     font-size: clamp(1.7rem, 7vw, 2.6rem);
   }
 
-  /* Hero más compacto */
   .hero {
     padding: 60px 16px 60px;
   }
@@ -1946,7 +1946,6 @@ button {
     font-size: clamp(2.2rem, 10vw, 3.6rem);
   }
 
-  /* Icono de WhatsApp más pequeño */
   .wa-icon {
     width: 70px;
     height: 70px;
@@ -1958,7 +1957,6 @@ button {
     height: 44px;
   }
 
-  /* Textos RSVP más compactos */
   .rsvp-text {
     font-size: 0.95rem;
     margin-bottom: 1.5rem;

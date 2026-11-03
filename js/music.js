@@ -1,7 +1,7 @@
 /* ============================================
    MUSIC.JS — Reproductor de música flotante
-   Invitación de Boda — Jonathan & Sarai
-   Versión mejorada: memoria, volumen suave, UX premium
+   Invitación de Boda — Jhonatan & Sarai
+   Autoplay al primer gesto + memoria de preferencia
    ============================================ */
 
 (function () {
@@ -29,7 +29,6 @@
   let isPlaying = false;
   let isReady = false; // Se activa cuando el audio puede reproducirse
 
-  // Volumen suave por defecto
   audio.volume = VOLUME;
 
   /* ============================================
@@ -47,7 +46,7 @@
   }
 
   /* ============================================
-     Mostrar estado de carga en el botón
+     Mostrar estado de carga
      ============================================ */
   function setLoadingState(loading) {
     player.classList.toggle("loading", loading);
@@ -60,19 +59,27 @@
   }
 
   /* ============================================
-     Guardar preferencia en localStorage
+     Guardar/leer preferencia
      ============================================ */
   function savePreference(playing) {
     try {
       localStorage.setItem(STORAGE_KEY, playing ? "1" : "0");
     } catch (e) {
-      // localStorage puede estar bloqueado en modo privado
+      /* localStorage bloqueado */
     }
   }
 
   function getPreference() {
     try {
       return localStorage.getItem(STORAGE_KEY) === "1";
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function hasUserExplicitlyDisabled() {
+    try {
+      return localStorage.getItem(STORAGE_KEY) === "0";
     } catch (e) {
       return false;
     }
@@ -99,7 +106,6 @@
           .catch((err) => {
             console.warn("No se pudo reproducir el audio:", err);
             setPlayingState(false);
-            savePreference(false);
           });
       }
     }
@@ -134,10 +140,7 @@
       audio
         .play()
         .then(() => setPlayingState(true))
-        .catch(() => {
-          // Si el navegador lo bloquea, dejamos el botón listo
-          setPlayingState(false);
-        });
+        .catch(() => setPlayingState(false));
     }
   });
 
@@ -149,7 +152,6 @@
   audio.addEventListener("pause", () => setPlayingState(false));
 
   audio.addEventListener("ended", () => {
-    // El atributo loop ya lo reinicia, pero aseguramos UI
     setPlayingState(false);
   });
 
@@ -161,9 +163,54 @@
   });
 
   /* ============================================
-     Timeout de seguridad:
-     Si el audio no carga en 8 segundos, asumir
-     que algo falla y no dejar el estado "loading"
+     AUTOPLAY AL PRIMER GESTO DEL USUARIO
+     Los navegadores bloquean autoplay con sonido;
+     este es el método más confiable y respetuoso.
+     ============================================ */
+  function tryAutoplayOnFirstGesture() {
+    if (isPlaying) return;
+    if (hasUserExplicitlyDisabled()) return;
+
+    if (!isReady) {
+      // Esperar a que cargue y reintentar una sola vez
+      audio.addEventListener("loadedmetadata", tryAutoplayOnFirstGesture, {
+        once: true,
+      });
+      return;
+    }
+
+    audio
+      .play()
+      .then(() => {
+        setPlayingState(true);
+        savePreference(true);
+        removeGestureListeners();
+      })
+      .catch(() => {
+        // El navegador lo bloqueó; no pasa nada
+      });
+  }
+
+  const gestureEvents = ["pointerdown", "touchstart", "keydown", "click"];
+
+  function removeGestureListeners() {
+    gestureEvents.forEach((evt) =>
+      document.removeEventListener(evt, tryAutoplayOnFirstGesture, true),
+    );
+  }
+
+  // Activar autoplay solo si el usuario NO lo desactivó explícitamente
+  if (!hasUserExplicitlyDisabled()) {
+    gestureEvents.forEach((evt) =>
+      document.addEventListener(evt, tryAutoplayOnFirstGesture, {
+        capture: true,
+        passive: true,
+      }),
+    );
+  }
+
+  /* ============================================
+     Timeout de seguridad
      ============================================ */
   setLoadingState(true);
   setTimeout(() => {
@@ -175,7 +222,6 @@
 
   /* ============================================
      Auto-pausar al salir de la pestaña
-     (ahorra batería y evita música de fondo)
      ============================================ */
   let wasPlayingBeforeHide = false;
 
@@ -194,7 +240,6 @@
 
   /* ============================================
      Pausar cuando otro medio empiece
-     (por si hay un video o audio fuera)
      ============================================ */
   document.addEventListener(
     "play",
@@ -208,7 +253,6 @@
 
   /* ============================================
      Accesibilidad: barra de progreso con teclado
-     (Flecha izquierda/derecha salta 5 segundos)
      ============================================ */
   if (progress) {
     progress.setAttribute("tabindex", "0");
@@ -233,11 +277,8 @@
     });
   }
 
-  /* ============================================
-     Log de bienvenida
-     ============================================ */
   console.log(
-    "%c🎵 Reproductor listo · Jonathan & Sarai",
+    "%c🎵 Reproductor listo · Jhonatan & Sarai",
     "color: #5A6B4E; font-size: 12px;",
   );
 })();

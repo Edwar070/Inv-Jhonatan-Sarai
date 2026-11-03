@@ -1,6 +1,6 @@
 /* ============================================
    SCROLL.JS — Animaciones de scroll + progreso
-   Invitación de Boda — Jonathan & Sarai
+   Invitación de Boda — Jhonatan & Sarai
    ============================================ */
 
 (function () {
@@ -8,7 +8,6 @@
 
   /* ============================================
      1. REVEAL AL SCROLL (IntersectionObserver)
-     Aplica a elementos con clase .reveal
      ============================================ */
   function initReveal() {
     const reveals = document.querySelectorAll(".reveal");
@@ -39,16 +38,13 @@
 
   /* ============================================
      2. PARALLAX SUAVE EN RAMAS DE ESQUINA
-     Mueve ligeramente las ramas al hacer scroll
      ============================================ */
   function initLeafParallax() {
     const corners = document.querySelectorAll(".leaf-corner");
     if (!corners.length) return;
 
-    // Desactivar en móvil (gasta batería y no se nota mucho)
     if (window.innerWidth < 768) return;
 
-    // Respetar prefers-reduced-motion
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let ticking = false;
@@ -59,7 +55,7 @@
       corners.forEach((corner) => {
         const speed =
           corner.classList.contains("leaf-corner--tl") ||
-            corner.classList.contains("leaf-corner--tr")
+          corner.classList.contains("leaf-corner--tr")
             ? 0.15
             : -0.1;
 
@@ -82,11 +78,9 @@
   }
 
   /* ============================================
-     3. BARRA DE PROGRESO DE LECTURA (opcional)
-     Muestra qué tanto has scrolleado
+     3. BARRA DE PROGRESO DE LECTURA
      ============================================ */
   function initReadingProgress() {
-    // Crear barra dinámicamente
     const bar = document.createElement("div");
     bar.style.cssText = `
       position: fixed;
@@ -128,7 +122,6 @@
 
   /* ============================================
      4. SCROLL SUAVE CON data-scroll
-     (Duplicado por seguridad si main.js no carga)
      ============================================ */
   function initSmoothScroll() {
     const links = document.querySelectorAll("[data-scroll]");
