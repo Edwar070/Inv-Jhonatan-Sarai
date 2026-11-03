@@ -278,7 +278,7 @@
   }
 
   console.log(
-    "%c🎵 Reproductor listo · Jhonatan & Sarai",
+    "%c🎵 Reproductor listo · Jonathan & Sarai",
     "color: #5A6B4E; font-size: 12px;",
   );
 })();

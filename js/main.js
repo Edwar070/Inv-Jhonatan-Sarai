@@ -1,6 +1,6 @@
 /* ============================================
    MAIN.JS — Funciones generales
-   Invitación de Boda — Jhonatan & Sarai
+   Invitación de Boda — Jonathan & Sarai
    ============================================ */
 
 (function () {
@@ -92,7 +92,7 @@
     const PHONE = "59178331146";
 
     const message = encodeURIComponent(
-      "¡Hola Jhonatan y Sarai! 💚\n\n" +
+      "¡Hola Jonathan y Sarai! 💚\n\n" +
         "Confirmo mi asistencia a su boda del 22 de diciembre de 2026.\n\n" +
         "Nombre: \n" +
         "Número de invitados: \n" +
